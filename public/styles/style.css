@@ -3313,6 +3313,7 @@ body{
 	border: none;
 }
 .contact-us .form .btn {
+	background-color: #2196F3;
 	display: inline-block;
 	margin-right: 10px;
 	color: #fff;

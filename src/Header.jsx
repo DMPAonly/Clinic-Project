@@ -1,43 +1,43 @@
-
+import { Link } from 'react-router-dom';
 
 function Header() {
     return (
-        <header class="header">
-            <div class="container">
-            <div class="inner">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-12">
+        <header className="header">
+            <div className="container">
+            <div className="inner">
+                <div className="row">
+                    <div className="col-lg-3 col-md-3 col-12">
                         {/*Start Logo*/}
-                        <div class="logo">
-                            <a href="index.html"><img src="../img/logo.png" alt="#" /></a>
+                        <div className="logo">
+                            <Link to="/"><img src="../img/logo.png" alt="#" /></Link>
                         </div>
                         {/*End Logo*/}
                         {/*Mobile Nav*/}
-                        <div class="mobile-nav"></div>
+                        <div className="mobile-nav"></div>
                         {/*End Mobile Nav*/}
                     </div>
-                    <div class="col-lg-7 col-md-9 col-12">
+                    <div className="col-lg-7 col-md-9 col-12">
                         {/*Main Menu*/}
-                        <div class="main-menu">
-                            <nav class="navigation">
-                                <ul class="nav menu">
-                                    <li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
-                                        <ul class="dropdown">
+                        <div className="main-menu">
+                            <nav className="navigation">
+                                <ul className="nav menu">
+                                    <li className="active"><Link to="/">Home <i className="icofont-rounded-down"></i></Link>
+                                        <ul className="dropdown">
                                             <li><a href="index.html">Home Page 1</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="disease.html">Disease </a></li>
-                                    <li><a href="doctor_list.html">Doctors </a></li>
-                                    <li><a href="Products.html">Products </a></li>
-                                    <li><a href="contact.html">Contact Us</a></li>
+                                    <li><Link to="/Diseases">Diseases </Link></li>
+                                    <li><Link to="/Doctors">Doctors </Link></li>
+                                    <li><Link to="/ProductList">Products </Link></li>
+                                    <li><Link to="/ContactUs">Contact Us </Link></li>
                                 </ul>
                             </nav>
                         </div>
                         {/*End Main Menu*/}
                     </div>
-                    <div class="col-lg-2 col-12">
-                        <div class="get-quote">
-                            <a href="appointment.html" class="btn">Book Appointment</a>
+                    <div className="col-lg-2 col-12">
+                        <div className="get-quote">
+                            <a href="appointment.html" className="btn">Book Appointment</a>
                         </div>
                     </div>
                 </div>
