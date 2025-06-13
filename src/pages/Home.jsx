@@ -1,4 +1,36 @@
+import { useEffect } from "react";
+
 function Home() {
+	useEffect(() => {
+		const script = document.createElement("script");
+		script.src = "/js/owl-carousel.js"; // this assumes it's in public/js/
+		script.async = true;
+		document.body.appendChild(script);
+
+		script.onload = () => {
+			// Initialize carousel only after script has loaded
+			if (window.$) {
+				window.$(".hero-slider").owlCarousel({
+				items: 1,
+				loop: true,
+				autoplay: true,
+				nav: true,
+				dots: true,
+				navText: ["<", ">"]
+				});
+			} else {
+				console.warn("jQuery not available. OwlCarousel may not work.");
+			}
+		};
+
+		return () => {
+		// Cleanup: destroy the carousel if needed
+			if (window.$ && window.$(".hero-slider").data("owl.carousel")) {
+				window.$(".hero-slider").trigger("destroy.owl.carousel");
+			}
+		};
+  	}, []);
+
     return (
         <>
 			{/*Slider Area*/}
