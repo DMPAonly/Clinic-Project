@@ -30,6 +30,11 @@ function ProductList() {
                     margin-bottom: 1rem;
                     text-shadow: 0 2px 6px rgba(0,0,0,0.3);
                 }
+                main {
+                    padding: 2rem 1rem;
+                    background-color: #e9f5d9;
+                    min-height: 100vh;
+                }
                 .product-list {
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -109,11 +114,13 @@ function ProductList() {
                 }
             `}
         </style>
+        <main>
         <div id="product-list" className="product-list">
-            {list.map((l) => {
-                return <ProductCard img_src={l.img} title={l.title} desc={l.description} />
+            {list.map((l, i) => {
+                return <ProductCard key={i} img_src={l.img} title={l.title} desc={l.description} />
             })}
         </div>
+        </main>
         </>
     )
 }

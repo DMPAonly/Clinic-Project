@@ -6,7 +6,7 @@ function NotFound() {
     }, []);
 
     return (
-        <>
+        <main>
             <section class="error-page section">
                 <div class="container">
                     <div class="row">
@@ -25,7 +25,7 @@ function NotFound() {
                     </div>
                 </div>
             </section>	
-        </>
+        </main>
     )
 }
 

@@ -12,11 +12,13 @@ function DoctorsList() {
                 * {
                     box-sizing: border-box;
                 }
-
+                body{
+                    background-color: #e9f5d9;
+                }
                 main {
+                    min-height: 100vh;
                     margin: 0;
                     font-family: 'Montserrat', sans-serif;
-                    background: #f5f8fb;
                     color: #333;
                     max-width: 1200px;
                     margin: 2rem auto 4rem;

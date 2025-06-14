@@ -32,7 +32,7 @@ function Home() {
   	}, []);
 
     return (
-        <>
+        <main>
 			{/*Slider Area*/}
 			<section className="slider">
 				<div className="hero-slider">
@@ -235,7 +235,7 @@ function Home() {
 			
 		
 			<!-- /End Newsletter Area --> */}
-        </>
+        </main>
     )
 }
 

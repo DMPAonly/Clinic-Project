@@ -14,16 +14,17 @@ function App() {
   return (
     <>
       <PreLoader />
-      <Header />
-      <Routes >
-        <Route path="/" element={<Home />} />
-        <Route path="/Diseases" element={<Diseases />} /> 
-        <Route path="/Doctors" element={<DoctorsList />} />
-        <Route path="/ProductList" element={<ProductList />} /> 
-        <Route path="/ContactUs" element={<ContactUs />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
+
+        <Header />
+        <Routes >
+          <Route path="/" element={<Home />} />
+          <Route path="/Diseases" element={<Diseases />} /> 
+          <Route path="/Doctors" element={<DoctorsList />} />
+          <Route path="/ProductList" element={<ProductList />} /> 
+          <Route path="/ContactUs" element={<ContactUs />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
     </>
   )
 }
