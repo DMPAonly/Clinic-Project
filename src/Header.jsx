@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 
 function Header() {
+    const location = useLocation();
+
     return (
         <header className="header">
             <div className="header-inner">
@@ -22,15 +24,15 @@ function Header() {
                                 <div className="main-menu">
                                     <nav className="navigation">
                                         <ul className="nav menu">
-                                            <li className="active"><Link to="/">Home <i className="icofont-rounded-down"></i></Link>
+                                            <li className={location.pathname === "/" ? "active" : ""}><NavLink to="/">Home <i className="icofont-rounded-down"></i></NavLink>
                                                 <ul className="dropdown">
                                                     <li><a href="index.html">Home Page 1</a></li>
                                                 </ul>
                                             </li>
-                                            <li><Link to="/Diseases">Diseases </Link></li>
-                                            <li><Link to="/Doctors">Doctors </Link></li>
-                                            <li><Link to="/ProductList">Products </Link></li>
-                                            <li><Link to="/ContactUs">Contact Us </Link></li>
+                                            <li className={location.pathname === "/Diseases" ? "active" : ""}><NavLink to="/Diseases">Diseases </NavLink></li>
+                                            <li className={location.pathname === "/Doctors" ? "active" : ""}><NavLink to="/Doctors">Doctors </NavLink></li>
+                                            <li className={location.pathname === "/ProductList" ? "active" : ""}><NavLink to="/ProductList">Products </NavLink></li>
+                                            <li className={location.pathname === "/ContactUs" ? "active" : ""}><NavLink to="/ContactUs">Contact Us </NavLink></li>
                                         </ul>
                                     </nav>
                                 </div>
