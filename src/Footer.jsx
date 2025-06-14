@@ -6,7 +6,7 @@ function Footer() {
             {`
                 footer {
                     background-color: #47ab14;
-                    padding: 1.5rem 2rem;
+                    padding: 4rem 2rem;
                     overflow: hidden;
                     position: relative;
                     font-size: 1rem;
@@ -107,9 +107,6 @@ function Footer() {
                     <a className="color-instagram" href="#" aria-label="Instagram" title="Instagram"><i className="bi bi-instagram"></i></a>
                     <a className="color-linkedin" href="#" aria-label="LinkedIn" title="LinkedIn"><i className="bi bi-linkedin"></i></a>
                 </div>
-            </div>
-            <div className="mt-2 overflow-hidden" aria-hidden="true">
-                <span className="marquee">Thank you for visiting — Stay Connected &amp; Follow Us on Social Media &nbsp;&nbsp;&nbsp;</span>
             </div>
         </footer>
         </>

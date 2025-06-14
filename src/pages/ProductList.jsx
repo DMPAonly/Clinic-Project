@@ -1,7 +1,12 @@
 import { useState } from "react"
+import { useEffect } from "react";
 import ProductCard from "../components/ProductCard"
 
 function ProductList() {
+    useEffect(() => {
+        document.title = "List of Products";
+    }, []);
+
     const [list, setList] = useState([
         {
             "img": "/img/product-photos/1957060443.jpg", 

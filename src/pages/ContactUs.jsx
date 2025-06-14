@@ -1,4 +1,11 @@
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
+
 function ContactUs() {
+	useEffect(() => {
+		document.title = "Contact Us";
+	}, []);
+	
     return (
         <>
             <div class="breadcrumbs overlay">
@@ -8,7 +15,7 @@ function ContactUs() {
 						<div class="col-12">
 							<h2>Contact Us</h2>
 							<ul class="bread-list">
-								<li><a href="index.html">Home</a></li>
+								<li><Link to="/">Home</Link></li>
 								<li><i class="icofont-simple-right"></i></li>
 								<li class="active">Contact Us</li>
 							</ul>

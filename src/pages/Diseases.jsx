@@ -2,6 +2,7 @@ import { useEffect } from "react";
 
 function Diseases(){
     useEffect(() => {
+        document.title = "List of Diseases";
         const cards = document.querySelectorAll('.card');
         const handlers = [];
 

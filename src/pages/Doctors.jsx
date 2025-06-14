@@ -1,4 +1,10 @@
+import { useEffect } from "react";
+
 function DoctorsList() {
+    useEffect(() => {
+        document.title = "List of Doctors";
+    }, []);
+    
     return (
         <>
         <style>
