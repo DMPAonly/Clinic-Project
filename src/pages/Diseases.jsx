@@ -38,13 +38,21 @@ function Diseases(){
         <>
         <style>
         {`
+            body {
+                font-family: 'Poppins', sans-serif;
+                background-color: #e9f5d9; /* Light green background */
+                color: #2d5a00; /* Dark green text */
+                /* padding: 1rem 1rem; */
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                box-sizing: border-box;
+            }
             main {
                 flex-grow: 1;
-                padding: 1rem 0;
+                padding: 1rem 1rem;
                 width: 100%;
                 box-sizing: border-box;
-                background-color: #e9f5d9; /* Light green background */
-                color: #2d5a00;
             }
 
             .cards-container {
@@ -73,7 +81,7 @@ function Diseases(){
                 position: relative;
                 overflow: hidden;
                 transition: max-height 0.4s ease, box-shadow 0.4s ease;
-                max-height: 90px;
+                max-height: 105px;
                 display: flex;
                 gap: 0.75rem;
                 align-items: flex-start;
@@ -106,7 +114,7 @@ function Diseases(){
             }
 
             .card h2 {
-                margin: 0 0 0.3rem 0;
+                margin: 0 0 1rem 0;
                 font-weight: 600;
                 font-size: 1.1rem;
                 color: #2d5a00;

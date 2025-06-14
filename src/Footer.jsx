@@ -62,10 +62,31 @@ function Footer() {
                     position: relative;
                 }
 
-                .social-icons a:hover {
-                    color: #0d6efd;
+                .social-icons .color-facebook:hover {
+                    color: #1877F2;
                     transform: scale(1.3);
-                    text-shadow: 0 0 8px #0d6efd;
+                    text-shadow: 0 0 8px #1877F2;
+                    z-index: 10;
+                }
+
+                .social-icons .color-twitter:hover {
+                    color: #1DA1F2;
+                    transform: scale(1.3);
+                    text-shadow: 0 0 8px #1DA1F2;
+                    z-index: 10;
+                }
+
+                .social-icons .color-instagram:hover {
+                    color: #D62976;
+                    transform: scale(1.3);
+                    text-shadow: 0 0 8px #D62976;
+                    z-index: 10;
+                }
+
+                .social-icons .color-linkedin:hover {
+                    color: #0077B5;
+                    transform: scale(1.3);
+                    text-shadow: 0 0 8px #0077B5;
                     z-index: 10;
                 }
 
