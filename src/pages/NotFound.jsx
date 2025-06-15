@@ -6,6 +6,14 @@ function NotFound() {
     }, []);
 
     return (
+        <>
+        <style>
+            {`
+                main{
+                    min-height: 100vh;
+                }
+            `}
+        </style>
         <main>
             <section class="error-page section">
                 <div class="container">
@@ -26,6 +34,7 @@ function NotFound() {
                 </div>
             </section>	
         </main>
+        </>
     )
 }
 
