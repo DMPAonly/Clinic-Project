@@ -1,4 +1,5 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function Header() {
     const location = useLocation();
@@ -18,7 +19,7 @@ function Header() {
                                 {/*Mobile Nav*/}
                                 <div className="mobile-nav">
                                     {/*<ul id="menu">
-                                        <li><NavLink to="/">Home <i className="icofont-rounded-down"></i></NavLink></li>
+                                        <li><NavLink to="/">Home </NavLink></li>
                                         <li><NavLink to="/Diseases">Diseases </NavLink></li>
                                         <li><NavLink to="/Doctors">Doctors </NavLink></li>
                                         <li><NavLink to="/ProductList">Products </NavLink></li>
