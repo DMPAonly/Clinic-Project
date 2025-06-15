@@ -18,13 +18,13 @@ function Header() {
                                 {/*End Logo*/}
                                 {/*Mobile Nav*/}
                                 <div className="mobile-nav">
-                                    {/*<ul id="menu">
+                                    <ul id="menu">
                                         <li><NavLink to="/">Home </NavLink></li>
                                         <li><NavLink to="/Diseases">Diseases </NavLink></li>
                                         <li><NavLink to="/Doctors">Doctors </NavLink></li>
                                         <li><NavLink to="/ProductList">Products </NavLink></li>
                                         <li><NavLink to="/ContactUs">Contact Us </NavLink></li>
-                                    </ul>*/}
+                                    </ul>
                                 </div>
                                 {/*End Mobile Nav*/}
                             </div>
