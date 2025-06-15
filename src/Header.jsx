@@ -16,7 +16,15 @@ function Header() {
                                 </div>
                                 {/*End Logo*/}
                                 {/*Mobile Nav*/}
-                                <div className="mobile-nav"></div>
+                                <div className="mobile-nav">
+                                    {/*<ul id="menu">
+                                        <li><NavLink to="/">Home <i className="icofont-rounded-down"></i></NavLink></li>
+                                        <li><NavLink to="/Diseases">Diseases </NavLink></li>
+                                        <li><NavLink to="/Doctors">Doctors </NavLink></li>
+                                        <li><NavLink to="/ProductList">Products </NavLink></li>
+                                        <li><NavLink to="/ContactUs">Contact Us </NavLink></li>
+                                    </ul>*/}
+                                </div>
                                 {/*End Mobile Nav*/}
                             </div>
                             <div className="col-lg-7 col-md-9 col-12">
@@ -24,11 +32,7 @@ function Header() {
                                 <div className="main-menu">
                                     <nav className="navigation">
                                         <ul className="nav menu">
-                                            <li className={location.pathname === "/" ? "active" : ""}><NavLink to="/">Home <i className="icofont-rounded-down"></i></NavLink>
-                                                <ul className="dropdown">
-                                                    <li><a href="index.html">Home Page 1</a></li>
-                                                </ul>
-                                            </li>
+                                            <li className={location.pathname === "/" ? "active" : ""}><NavLink to="/">Home {/*<i className="icofont-rounded-down"></i>*/}</NavLink></li>
                                             <li className={location.pathname === "/Diseases" ? "active" : ""}><NavLink to="/Diseases">Diseases </NavLink></li>
                                             <li className={location.pathname === "/Doctors" ? "active" : ""}><NavLink to="/Doctors">Doctors </NavLink></li>
                                             <li className={location.pathname === "/ProductList" ? "active" : ""}><NavLink to="/ProductList">Products </NavLink></li>
