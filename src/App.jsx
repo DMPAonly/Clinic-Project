@@ -8,6 +8,8 @@ import DoctorsList from './pages/Doctors.jsx';
 import ProductList from './pages/ProductList.jsx';
 import ContactUs from './pages/ContactUs.jsx';
 import NotFound from './pages/NotFound.jsx';
+import PatientForm from './pages/PatientForm.jsx';
+import ConfirmationPage from './pages/ConfirmationPage.jsx';
 
 function App() {
 
@@ -22,6 +24,8 @@ function App() {
         <Route path="/ProductList" element={<ProductList />} /> 
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/Patient_Form" element={<PatientForm />} />
+        <Route path="/Confirmation_page" element={<ConfirmationPage />} />
       </Routes>
       <Footer />
     </>
