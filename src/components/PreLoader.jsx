@@ -3,13 +3,16 @@ import { useEffect, useState } from "react";
 function PreLoader() {
     const [loaded, setLoaded] = useState(false);
 
-    const handleLoad = () => {
-        return setLoaded(true);
-    }
-
     useEffect(() => {
-        window.addEventListener('load', handleLoad);
-        return () => window.removeEventListener('load', handleLoad);    
+        const handleLoad = () => {
+            return setLoaded(true);
+        }
+        if(document.readyState === "complete"){
+            handleLoad();
+        } else{
+            window.addEventListener('load', handleLoad);
+            return () => window.removeEventListener('load', handleLoad);
+        }   
     }, []);
 
     return (
