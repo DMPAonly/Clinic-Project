@@ -45,7 +45,7 @@ function Header() {
                             </div>
                             <div className="col-lg-2 col-12">
                                 <div className="get-quote">
-                                    <a href="appointment.html" className="btn">Book Appointment</a>
+                                    <Link to="/Patient_Form" className="btn">Book Appointment</Link>
                                 </div>
                             </div>
                         </div>
