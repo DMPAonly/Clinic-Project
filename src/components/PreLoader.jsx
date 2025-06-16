@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 function PreLoader() {
     const [loaded, setLoaded] = useState(false);
 
-    function handleLoad() {
-        setLoaded(true);
+    const handleLoad = () => {
+        return setLoaded(true);
     }
 
     useEffect(() => {
