@@ -11,12 +11,12 @@ function Home() {
 			// Initialize carousel only after script has loaded
 			if (window.$) {
 				window.$(".hero-slider").owlCarousel({
-				/*items: 1,
+				items: 1,
 				loop: true,
 				autoplay: true,
 				nav: true,
 				dots: true,
-				navText: ["<", ">"]*/
+				navText: ["<", ">"]
 				});
 			} else {
 				console.warn("jQuery not available. OwlCarousel may not work.");
