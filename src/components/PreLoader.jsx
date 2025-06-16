@@ -10,7 +10,7 @@ function PreLoader() {
     useEffect(() => {
         window.addEventListener('load', handleLoad);
         return () => window.removeEventListener('load', handleLoad);    
-    });
+    }, []);
 
     return (
         <>
