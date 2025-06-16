@@ -1063,6 +1063,7 @@ Version:	1.1
 }
 .slider .single-slider {
 	height: 380px;
+	border: 2px solid red;
 }
 .schedule {
 	background: #fff;
@@ -1071,6 +1072,7 @@ Version:	1.1
 	height: auto;
 	padding: 50px 0;
 	border-bottom:1px solid #eee;
+	border: 2px solid blue;
 }
 .schedule .schedule-inner {
 	transform: none;

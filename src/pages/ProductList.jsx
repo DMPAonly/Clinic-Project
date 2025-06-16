@@ -105,9 +105,6 @@ function ProductList() {
                     background-color: #357ABD;
                 }
                 @media (max-width: 480px) {
-                    body {
-                        padding: 1rem;
-                    }
                     .product-info {
                         padding: 1rem;
                     }

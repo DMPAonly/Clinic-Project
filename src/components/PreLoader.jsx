@@ -1,7 +1,20 @@
+import { useEffect, useState } from "react";
+
 function PreLoader() {
+    const [loaded, setLoaded] = useState(false);
+
+    function handleLoad() {
+        setLoaded(true);
+    }
+
+    useEffect(() => {
+        window.addEventListener('load', handleLoad);
+        return () => window.removeEventListener('load', handleLoad);    
+    });
+
     return (
         <>
-            <div className="preloader">
+            <div className={loaded ? "preloader preloader-deactivate" : "preloader"}>
                 <div className="loader">
                     <div className="loader-outter"></div>
                     <div className="loader-inner"></div>
