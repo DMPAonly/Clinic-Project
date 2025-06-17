@@ -4,6 +4,20 @@ import { useEffect } from 'react';
 function Header() {
     const location = useLocation();
 
+    useEffect(() => {
+    // Destroy previous menu if exists
+    if ($('.slicknav_menu').length > 0) {
+      $('.slicknav_menu').remove();
+    }
+
+    // Re-initialize SlickNav
+    $('#menu').slicknav({
+      prependTo: ".mobile-nav",
+      duration: 300,
+      closeOnClick: true,
+    });
+  }, [location.pathname]); // Runs whenever the route changes
+
     return (
         <>
         <style>
