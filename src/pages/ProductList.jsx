@@ -91,19 +91,6 @@ function ProductList() {
                     display: flex;
                     justify-content: flex-end;
                 }
-                .btn {
-                    background-color: #4a90e2;
-                    border: none;
-                    border-radius: 6px;
-                    padding: 0.5rem 1rem;
-                    font-size: 0.95rem;
-                    color: white;
-                    cursor: pointer;
-                    transition: background-color 0.3s ease;
-                }
-                .btn:hover {
-                    background-color: #357ABD;
-                }
                 @media (max-width: 480px) {
                     .product-info {
                         padding: 1rem;

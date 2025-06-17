@@ -27,9 +27,10 @@ function PatientForm() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        if (!formData.fname || !formData.lname || !formData.age || !formData.mail || !formData.doa || !formData.reason) {
-        alert("Please fill in all required fields.");
-        return;
+        const form = e.target;
+        if (!form.checkValidity()) {
+            form.classList.add("was-validated");
+            return;
         }
 
         console.log("Form submitted:", formData);
@@ -127,7 +128,7 @@ function PatientForm() {
                                         <label htmlFor="extra" className="form-label">Extra Notes(optional):</label>
                                         <textarea className="form-control input-fields" id="extra" name="extra" rows="4" style={{ resize: "none" }} placeholder="Type any additional info here..." onChange={handleChange} value={formData.extra}></textarea>
                                     </div>
-                                    <button type="submit" className="btn btn-primary w-100 custom-btn">Submit form</button>
+                                    <button type="submit" className="btn btn-primary w-100 custom-btn" style={{ backgroundColor: "#4caf50", border: "none"}}>Submit form</button>
                                 </form>
                             </div>
                         </div>

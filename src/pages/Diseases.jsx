@@ -39,7 +39,6 @@ function Diseases(){
         <style>
         {`
             body {
-                font-family: 'Poppins', sans-serif;
                 background-color: #e9f5d9; /* Light green background */
                 color: #2d5a00; /* Dark green text */
                 /* padding: 1rem 1rem; */
@@ -49,6 +48,7 @@ function Diseases(){
                 box-sizing: border-box;
             }
             main {
+                font-family: 'Poppins', sans-serif;
                 flex-grow: 1;
                 padding: 1rem 1rem;
                 width: 100%;

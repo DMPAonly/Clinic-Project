@@ -5,6 +5,26 @@ function Header() {
     const location = useLocation();
 
     return (
+        <>
+        <style>
+            {`
+                .btn {
+                    margin-top: 13px;
+                    background-color: #47ab14;
+                    border: none;
+                    border-radius: 6px;
+                    padding: 0.5rem 1rem;
+                    font-size: 0.95rem;
+                    color: white;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                }
+                .btn:hover {
+                    background-color: #47ab14;
+                    color: #ffffff;
+                }
+            `}
+        </style>
         <header className="header">
             <div className="header-inner">
                 <div className="container">
@@ -18,12 +38,13 @@ function Header() {
                                 {/*End Logo*/}
                                 {/*Mobile Nav*/}
                                 <div className="mobile-nav">
-                                    <ul id="menu">
+                                    <ul id='menu'>
                                         <li><NavLink to="/">Home </NavLink></li>
                                         <li><NavLink to="/Diseases">Diseases </NavLink></li>
                                         <li><NavLink to="/Doctors">Doctors </NavLink></li>
                                         <li><NavLink to="/ProductList">Products </NavLink></li>
                                         <li><NavLink to="/ContactUs">Contact Us </NavLink></li>
+                                        <li><NavLink to="/Patient_Form">Book Appointment</NavLink></li>
                                     </ul>
                                 </div>
                                 {/*End Mobile Nav*/}
@@ -53,6 +74,7 @@ function Header() {
                 </div>
             </div>    
         </header>
+        </>
     )
 }
 

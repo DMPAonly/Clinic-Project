@@ -105,7 +105,7 @@ function Home() {
 								</div>
 							</div>
 							
-							<div className="col-lg-4 col-md-12 col-12">
+							<div className="col-lg-4 col-md-6 col-12">
 								{/*single-schedule*/}
 								<div className="single-schedule last">
 									<div className="inner">
@@ -119,7 +119,6 @@ function Home() {
 												<li className="day">Saturday <span>9.00-10.30</span></li>
 												{/*<li className="day">Monday - Thusday <span>9.00-15.00</span></li>*/}
 											</ul>
-											<a href="#">LEARN MORE<i className="fa fa-long-arrow-right"></i></a>
 										</div>
 									</div>
 								</div>

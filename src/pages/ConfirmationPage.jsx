@@ -8,8 +8,6 @@ function ConfirmationPage() {
         navigate("/Patient_Form", { state: formData });
     }
 
-    let ModalInstance;
-
     const handleSubmit = () => {
         $('#staticBackdrop').modal('show'); 
     };
@@ -30,7 +28,7 @@ function ConfirmationPage() {
                 <div className="row justify-content-center">
                     <div className="col-md-8 col-lg-6 col-sm-12">
                         <div className="card shadow rounded">
-                            <div className="card-header bg-primary text-white text-center">
+                            <div className="card-header text-white text-center" style={{ backgroundColor: "#4caf50"}}>
                                 <h4 className="mb-0">Confirm Details</h4>
                             </div>
                             <div className="card-body">
@@ -43,7 +41,7 @@ function ConfirmationPage() {
                             </div>
                             <div className="card-footer text-end">
                                 <button id="edit-btn" type="button" className="btn btn-secondary me-2" onClick={handleEdit}>Edit Application</button>
-                                <button id="submit-btn" type="button" className="btn btn-primary" onClick={handleSubmit}>Confirm Submit</button>
+                                <button id="submit-btn" type="button" className="btn btn-primary me-2" style={{ backgroundColor: "#4caf50"}} onClick={handleSubmit}>Confirm Submit</button>
                             </div>
                         </div>
                     </div>

@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import PreLoader from './components/PreLoader.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
@@ -12,11 +12,12 @@ import PatientForm from './pages/PatientForm.jsx';
 import ConfirmationPage from './pages/ConfirmationPage.jsx';
 
 function App() {
+  const location = useLocation();
 
   return (
     <>
       <PreLoader />
-      <Header />
+      {location.pathname === "/Patient_Form" || location.pathname === "/Confirmation_page" ? null : <Header />}
       <Routes >
         <Route path="/" element={<Home />} />
         <Route path="/Diseases" element={<Diseases />} /> 
@@ -27,7 +28,7 @@ function App() {
         <Route path="/Patient_Form" element={<PatientForm />} />
         <Route path="/Confirmation_page" element={<ConfirmationPage />} />
       </Routes>
-      <Footer />
+      {location.pathname === "/Patient_Form" || location.pathname === "/Confirmation_page" ? null : <Footer />}
     </>
   )
 }

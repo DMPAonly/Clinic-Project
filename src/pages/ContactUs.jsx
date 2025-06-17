@@ -5,11 +5,16 @@ function ContactUs() {
 	useEffect(() => {
 		document.title = "Contact Us";
 	}, []);
+
+	function handleSubmit(e) {
+		e.preventDefault();
+		console.log("Submitted");
+	}
 	
     return (
         <>
-		<main>
-            <div className="breadcrumbs overlay">
+		<main style={{backgroundColor: "#e9f5d9"}}>
+            {/*<div className="breadcrumbs overlay">
 			<div className="container">
 				<div className="bread-inner">
 					<div className="row">
@@ -24,21 +29,20 @@ function ContactUs() {
 					</div>
 				</div>
 			</div>
-		</div>
-		{/* End Breadcrumbs */}
+			</div>*/}
+			{/* End Breadcrumbs */}
 				
 		{/* Start Contact Us */}
 		<section className="contact-us section">
 			<div className="container">
-				<div className="inner">
+				<div className="inner" style={{backgroundColor: "#ffffff"}}>
 					<div className="row"> 
-					
 						<div className="col-lg-6">
 							<div className="contact-us-form">
 								<h2>Contact With Us</h2>
 								<p>If you have any questions please fell free to contact with us.</p>
 								{/* Form */}
-								<form className="form" method="post" action="mail/mail.php">
+								<form className="form" method="post" onSubmit={handleSubmit}>
 									<div className="row">
 										<div className="col-lg-6">
 											<div className="form-group">
@@ -68,9 +72,6 @@ function ContactUs() {
 										<div className="col-12">
 											<div className="form-group login-btn">
 												<button className="btn" type="submit">Send</button>
-											</div>
-											<div className="checkbox">
-												<label className="checkbox-inline" htmlFor="2"><input name="news" id="2" type="checkbox" />Do you want to subscribe our Newsletter ?</label>
 											</div>
 										</div>
 									</div>
