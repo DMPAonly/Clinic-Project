@@ -97,7 +97,7 @@ function Home() {
 										<div className="single-content">
 											<h4>DR. B.Singh</h4>
 											<p> B. Pharma, B.E.M.S.Medicine  <br></br>
-											With over 8+ years of experience in homeopathy and electrohomeopathy, Dr. Singh combines compassionate care with scientific expertise to offer personalized treatment plans tailored to each patient's unique needs.<br></br>
+											With over 5+ years of experience in electrohomeopathy, Dr. Singh combines compassionate care with scientific expertise to offer personalized treatment plans tailored to each patient's unique needs.<br></br>
 											</p>
 											{/*<a href="#">LEARN MORE<i className="fa fa-long-arrow-right"></i></a>*/}
 										</div>

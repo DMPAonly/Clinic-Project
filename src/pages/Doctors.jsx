@@ -144,14 +144,6 @@ function DoctorsList() {
                         Specializes in PCOD , THYROID SUGAR.
                     </p>
                 </article>
-
-                <article className="doctor-card" tabIndex="0">
-                    <h2 className="doctor-name">Dr. Bharat Chauhan</h2>
-                    <p className="doctor-specialty">Diabetologist , endocrinologist </p>
-                    <p className="doctor-bio">
-                        Specializes in  diabetic & thyroid condition acute as well cronic with over 6 yr experience.
-                    </p>
-                </article>
             </section>
         </main>
         </>
