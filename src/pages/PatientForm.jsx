@@ -4,6 +4,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 function PatientForm() {
     const navigate = useNavigate();
     const { state: editData } = useLocation();
+    const [minDate, setMinDate] = useState();
 
     const [formData, setFormData] = useState({
         fname: "",
@@ -44,6 +45,12 @@ function PatientForm() {
             setFormData(editData);
         }
     }, [editData]);
+
+    useEffect(() => {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        setMinDate(tomorrow.toISOString().split("T")[0]);
+    }, []);
 
     return (
         <div id="page-1" className="d-flex flex-column min-vh-100">
@@ -106,7 +113,7 @@ function PatientForm() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="doa" className="form-label">Date of Appointment: </label>
-                                        <input type="date" className="form-control input-fields" id="doa" name="doa" onChange={handleChange} value={formData.doa} required/>
+                                        <input type="date" className="form-control input-fields" id="doa" name="doa" onChange={handleChange} value={formData.doa} min={minDate} required/>
                                         <div className="valid-feedback">
                                             Looks good!
                                         </div>
