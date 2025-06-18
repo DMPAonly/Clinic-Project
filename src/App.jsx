@@ -10,6 +10,7 @@ import ContactUs from './pages/ContactUs.jsx';
 import NotFound from './pages/NotFound.jsx';
 import PatientForm from './pages/PatientForm.jsx';
 import ConfirmationPage from './pages/ConfirmationPage.jsx';
+import AdminPanel from './pages/AdminPanel.jsx';
 
 function App() {
   const location = useLocation();
@@ -27,6 +28,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
         <Route path="/Patient_Form" element={<PatientForm />} />
         <Route path="/Confirmation_page" element={<ConfirmationPage />} />
+        <Route path="/AdminPanel" element={<AdminPanel />} />
       </Routes>
       {location.pathname === "/Patient_Form" || location.pathname === "/Confirmation_page" ? null : <Footer />}
     </>
