@@ -5,7 +5,7 @@ function Orders() {
             <div className="table-responsive small"> 
                 <table className="table table-striped table-sm"> 
                     <thead> 
-                        <tr> 
+                        <tr className="table-header"> 
                             <th scope="col">S.no.</th> 
                             <th scope="col">Name</th> 
                             <th scope="col">Payment Mode</th> 

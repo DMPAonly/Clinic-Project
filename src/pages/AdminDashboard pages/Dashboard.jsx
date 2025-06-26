@@ -5,14 +5,14 @@ function Dashboard(props) {
             <div className="table-responsive small"> 
                 <table className="table table-striped table-sm"> 
                     <thead> 
-                        <tr> 
+                        <tr className="table-header"> 
                             <th scope="col">S.no.</th> 
                             <th scope="col">Name</th> 
                             <th scope="col">Age</th> 
                             <th scope="col">Email</th> 
                             <th scope="col">Appointment Date</th>
                             <th scope="col">Reason</th>
-                            <th scope="Extra Notes">Extra Notes</th> 
+                            <th scope="col">Extra Notes</th> 
                         </tr> 
                     </thead> 
                     <tbody>

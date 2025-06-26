@@ -50,7 +50,7 @@ function AdminDashboard() {
     }
 
     return (
-        <div style={{ height: "100%" }}> 
+        <div style={{ height: "100%", backgroundColor: "#f2f2f2" }}> 
             <svg xmlns="http://www.w3.org/2000/svg" className="d-none"> 
                 <symbol id="check2" viewBox="0 0 16 16"> 
                     <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"></path> 
@@ -114,7 +114,7 @@ function AdminDashboard() {
                 <symbol id="search" viewBox="0 0 16 16"> 
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path> 
                 </symbol> 
-            </svg> 
+            </svg>
             <header className="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark"> 
                 <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">ElectroHomeopathic Clinic</a> 
                 <ul className="navbar-nav flex-row d-md-none"> 
@@ -133,9 +133,9 @@ function AdminDashboard() {
                         </button> 
                     </li> 
                 </ul> 
-                <div id="navbarSearch" className="navbar-search w-100 collapse"> 
+                {/*<div id="navbarSearch" className="navbar-search w-100 collapse"> 
                     <input className="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search" /> 
-                </div> 
+                </div>*/}
             </header> 
             <div className="container-fluid" style={{ height: "100%"}}> 
                 <div className="row" style={{ height: "100%"}}> 
