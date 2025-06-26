@@ -60,3 +60,42 @@
   background-color: #47ab14;
 }
 
+.custom-btn-1 {
+  background-color: #2f6d0a;
+  color: #ffffff;
+  padding: 5px 20px;
+}
+
+.custom-btn-2 {
+  background-color: #FF3F33;
+  color: #ffffff;
+  padding: 5px 20px;
+}
+
+.custom-btn-1:hover {
+  background-color: #333333;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.custom-btn-2:hover{
+  background-color: #8A0000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.custom-btn-3 {
+  background-color: #47ab14;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.custom-btn-3:hover{
+  background-color: #2f6d0a;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+

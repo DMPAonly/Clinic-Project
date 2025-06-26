@@ -5,6 +5,7 @@ function ProductAdmin() {
     const [products, setProducts] = useState([]);
     const [newProduct, setNewProduct] = useState({id: "", name: "", price: "", stock: "", desc: "", img: ""});
     const [editId, setEditId] = useState(null);
+    const [hover, setHover] = useState(false);
 
     useEffect(() => {
         setProducts([{
@@ -106,15 +107,16 @@ function ProductAdmin() {
                             <td>{product.desc}</td>
                             <td><img src={product.img} alt={product.name} width="80" /></td>
                             <td>      
-                                <button className="btn btn-sm btn-info mr-2" onClick={() => handleEdit(product)}>Edit</button>
-                                <button className="btn btn-sm btn-danger" onClick={() => handleDelete(product.id)}>Delete</button>
+                                <button className="custom-btn-1 btn-sm btn-info mr-2" onClick={() => handleEdit(product)}
+                                    >Edit</button>
+                                <button className="custom-btn-2 btn-sm btn-danger" onClick={() => handleDelete(product.id)}>Delete</button>
                             </td>
                         </tr>
                         ))}
                     </tbody>
                 </table> 
             </div> 
-            <button className="btn btn-primary mt-4" style={{maxWidth: "200px", backgroundColor: "#47ab14"}} onClick={() => setShowModal(true)}>Add New Product</button>
+            <button className="custom-btn-3 mt-4" style={{maxWidth: "200px"}} onClick={() => setShowModal(true)}>Add New Product</button>
 
             {/*Modal*/}
             <div className={`modal fade ${showModal ? 'show d-block' : ''}`} tabIndex="-1" role="dialog" style={{ backgroundColor: showModal ? 'rgba(0,0,0,0.5)' : 'transparent' }}>
@@ -150,8 +152,8 @@ function ProductAdmin() {
                                 </div>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" onClick={() => { setShowModal(false); setEditId(null); setNewProduct({ name: '', price: '', stock: '', desc: '', img: null });}} style={{ backgroundColor: "#1e90ff"}}>Close</button>
-                                <button type="submit" className="btn btn-success" style={{ backgroundColor: "#47ab14"}}>{editId ? "Update Product" : "Add Product"}</button>
+                                <button type="button" className="custom-btn-2 btn-sm btn-danger" onClick={() => { setShowModal(false); setEditId(null); setNewProduct({ name: '', price: '', stock: '', desc: '', img: null });}}>Close</button>
+                                <button type="submit" className="custom-btn-1 btn-sm btn-info mr-2">{editId ? "Update Product" : "Add Product"}</button>
                             </div>
                         </form>
                     </div>
