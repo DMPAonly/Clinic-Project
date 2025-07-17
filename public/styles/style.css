@@ -4309,3 +4309,58 @@ body{
 /*=========================
 	End admin-panel CSS
 ===========================*/
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+
+.burger .line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    transition: all 0.3s ease;
+}
+
+/* Mobile nav hidden by default */
+.mobile-nav {
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    top: 50px; /* adjust as needed */
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+	}
+
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+	/* Show nav when open */
+	.mobile-nav.open {
+		display: block;
+	}
+	
+	.mobile-nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-nav li {
+        padding: 10px 20px;
+        border-bottom: 1px solid #eee;
+		text-decoration: none;
+		color: #333;
+    }
+
+	.mobile-nav li:hover{
+		background-color: #47ab14;
+		color: #ffffff;
+	}
+}

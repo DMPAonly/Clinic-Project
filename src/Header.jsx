@@ -1,12 +1,18 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 function Header() {
     const location = useLocation();
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleNav = () => {
+        setIsOpen(!isOpen);
+    }
+
     useEffect(() => {
     // Destroy previous menu if exists
-    if ($('.slicknav_menu').length > 0) {
+    /*if ($('.slicknav_menu').length > 0) {
       $('.slicknav_menu').remove();
     }
 
@@ -15,7 +21,8 @@ function Header() {
       prependTo: ".mobile-nav",
       duration: 300,
       closeOnClick: true,
-    });
+    });*/
+    toggleNav();
   }, [location.pathname]); // Runs whenever the route changes
 
     return (
@@ -45,13 +52,18 @@ function Header() {
                     <div className="inner">
                         <div className="row">
                             <div className="col-lg-3 col-md-3 col-12">
+                                <div className="burger" onClick={toggleNav}>
+                                    <div className="line"></div>
+                                    <div className="line"></div>
+                                    <div className="line"></div>
+                                </div>
                                 {/*Start Logo*/}
                                 <div className="logo">
                                     <Link to="/"><img src="../img/logo.png" alt="#" /></Link>
                                 </div>
                                 {/*End Logo*/}
                                 {/*Mobile Nav*/}
-                                <div className="mobile-nav">
+                                <div className={`mobile-nav ${isOpen ? 'open' : ''}`}>
                                     <ul id='menu'>
                                         <li><NavLink to="/">Home </NavLink></li>
                                         <li><NavLink to="/Diseases">Diseases </NavLink></li>
