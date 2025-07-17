@@ -1,8 +1,33 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 function DoctorsList() {
+
+    const [docList, setDocList] = useState([]);
+
     useEffect(() => {
         document.title = "List of Doctors";
+        setDocList([
+        {
+            name: "Dr. B. Singh",
+            Speciality: "Family physician & gynecologist",
+            description: "Specialized care for women's health & family health. Speciality in Reproductive system and related conditions." 
+        },
+        {
+            name: "Dr. R. Kumar",
+            Speciality: "Pediatrician",
+            description: "Caring pediatrician specializing in child health and preventative care."
+        },
+        {
+            name: "Dr. Bharat Chauhan",
+            Speciality: "Diabetologist, Endocrologist",
+            description: "Expert in diabetic & thyroid condition acute as well chronic with over 6 years of experience."
+        },
+        {
+            name: "Dr. Anamika Tyagi",
+            Speciality: "Dietitian",
+            description: "Specializes in PCOD, Thyroid & Sugar."
+        }
+    ]);
     }, []);
     
     return (
@@ -113,37 +138,15 @@ function DoctorsList() {
         </style>
         <main>
             <section className="doctor-list" aria-label="List of doctors">
-                <article className="doctor-card" tabIndex="0">
-                    <h2 className="doctor-name">Dr B.singh</h2>
-                    <p className="doctor-specialty">Family physician & gynecologist</p>
-                    <p className="doctor-bio">
-                        Specialized care for women's health, & family health. Spl in Reproductive system and related conditions.
-                    </p>
-                </article>
-
-                <article className="doctor-card" tabIndex="0">
-                    <h2 className="doctor-name">Dr. R. Kumar</h2>
-                    <p className="doctor-specialty">Pediatrician</p>
-                    <p className="doctor-bio">
-                        Caring pediatrician specializing in child health and preventative care.
-                    </p>
-                </article>
-
-                <article className="doctor-card" tabIndex="0">
-                    <h2 className="doctor-name">Dr. Bharat Chauhan</h2>
-                    <p className="doctor-specialty">Diabetologist , endocrinologist </p>
-                    <p className="doctor-bio">
-                        Exper in diabetic & thyroid condition acute as well cronic with over 6 yr experience.
-                    </p>
-                </article>
-
-                <article className="doctor-card" tabIndex="0">
-                    <h2 className="doctor-name">Dr. Anamika tyagi </h2>
-                    <p className="doctor-specialty">Dietitian</p>
-                    <p className="doctor-bio">
-                        Specializes in PCOD , THYROID SUGAR.
-                    </p>
-                </article>
+                {docList.map((doc) => {
+                    return (
+                        <article className="doctor-card" tabIndex="0">
+                            <h2 className="doctor-name">{doc.name}</h2>
+                            <p className="doctor-specialty">{doc.Speciality}</p>
+                            <p className="doctor-bio">{doc.description}</p>
+                        </article>
+                    );
+                })}
             </section>
         </main>
         </>
