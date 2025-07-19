@@ -4,10 +4,16 @@ import style from "./assets/header.module.css";
 
 function Header() {
     const location = useLocation();
-
     const [isOpen, setIsOpen] = useState(false);
+    const Links = [{name: "Home", link: "/"}, 
+        {name: "Diseases", link: "/Diseases"},
+        {name: "Doctors", link: "/Doctors"},
+        {name: "Products", link: "/ProductList"},
+        {name: "Contact Us", link: "/ContactUs"},
+        {name: "Book Appointment", link: "/Patient_Form"}
+    ]
 
-    const toggleNav = () => {
+    function toggleNav() {
         setIsOpen(!isOpen);
     }
 
@@ -31,18 +37,15 @@ function Header() {
                                 </div>
                                 {/*Start Logo*/}
                                 <div className="logo">
-                                    <Link to="/"><img src="../img/logo.png" alt="#" /></Link>
+                                    <Link to="/"><img src="../img/logo.png" alt="Electro Homeopathic Clinic" /></Link>
                                 </div>
                                 {/*End Logo*/}
                                 {/*Mobile Nav*/}
                                 <div className={`mobile-nav ${isOpen ? 'open' : ''}`}>
                                     <ul id='menu'>
-                                        <li><NavLink to="/">Home </NavLink></li>
-                                        <li><NavLink to="/Diseases">Diseases </NavLink></li>
-                                        <li><NavLink to="/Doctors">Doctors </NavLink></li>
-                                        <li><NavLink to="/ProductList">Products </NavLink></li>
-                                        <li><NavLink to="/ContactUs">Contact Us </NavLink></li>
-                                        <li><NavLink to="/Patient_Form">Book Appointment</NavLink></li>
+                                        {Links.map((l, i) => {
+                                            return <li key={i}><NavLink to={l.link}>{l.name}</NavLink></li>
+                                        })}
                                     </ul>
                                 </div>
                                 {/*End Mobile Nav*/}
@@ -52,11 +55,15 @@ function Header() {
                                 <div className="main-menu">
                                     <nav className="navigation">
                                         <ul className="nav menu">
-                                            <li className={location.pathname === "/" ? "active" : ""}><NavLink to="/">Home {/*<i className="icofont-rounded-down"></i>*/}</NavLink></li>
-                                            <li className={location.pathname === "/Diseases" ? "active" : ""}><NavLink to="/Diseases">Diseases </NavLink></li>
-                                            <li className={location.pathname === "/Doctors" ? "active" : ""}><NavLink to="/Doctors">Doctors </NavLink></li>
-                                            <li className={location.pathname === "/ProductList" ? "active" : ""}><NavLink to="/ProductList">Products </NavLink></li>
-                                            <li className={location.pathname === "/ContactUs" ? "active" : ""}><NavLink to="/ContactUs">Contact Us </NavLink></li>
+                                            {Links.map((l, i) => {
+                                                if(l.name !== "Book Appointment"){
+                                                    return (
+                                                        <li key={i} className={location.pathname === l.link ? "active" : ""}>
+                                                            <NavLink to={l.link}>{l.name} </NavLink>
+                                                        </li>
+                                                    )
+                                                } 
+                                            })}
                                         </ul>
                                     </nav>
                                 </div>
