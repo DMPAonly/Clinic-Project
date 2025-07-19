@@ -98,4 +98,10 @@
   transition: 0.3s;
 }
 
+.bi-burger {
+  fill: white !important;
+  width: 2rem;
+  height: 2rem;
+}
+
 

@@ -8,6 +8,13 @@ import Customers from "./AdminDashboard pages/Customers";
 function AdminDashboard() {
     const [forms, setForms] = useState([]);
     const [active, setActive] = useState("Dashboard");
+    const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+    const toggleSidebar = () => {
+        setSidebarOpen((prev) => !prev);
+    };
+
+    const closeSidebar = () => setSidebarOpen(false);
     
     useEffect(() => {
         const root = document.getElementById('root');
@@ -118,16 +125,16 @@ function AdminDashboard() {
             <header className="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark"> 
                 <a className="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#">ElectroHomeopathic Clinic</a> 
                 <ul className="navbar-nav flex-row d-md-none"> 
-                    <li className="nav-item text-nowrap"> 
+                    {/*<li className="nav-item text-nowrap"> 
                         <button className="nav-link px-3 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false" aria-label="Toggle search"> 
                             <svg className="bi" aria-hidden="true">
                                 <use xlinkHref="#search"></use>
                             </svg> 
                         </button> 
-                    </li> 
+                    </li> */}
                     <li className="nav-item text-nowrap"> 
-                        <button className="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation"> 
-                            <svg className="bi" aria-hidden="true">
+                        <button className="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation" onClick={toggleSidebar}> 
+                            <svg className="bi-burger" aria-hidden="true">
                                 <use xlinkHref="#list"></use>
                             </svg> 
                         </button> 
@@ -163,7 +170,7 @@ function AdminDashboard() {
                     </main> 
                 </div> 
             </div>   
-            <script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" className="astro-vvvwv3sm"></script> 
+            {/*<script src="/docs/5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" className="astro-vvvwv3sm"></script>*/}
             <script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossOrigin="anonymous" className="astro-vvvwv3sm"></script>
             <script src="/js/dashboard.js" className="astro-vvvwv3sm"></script>  
         </div>

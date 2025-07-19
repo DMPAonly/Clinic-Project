@@ -181,7 +181,7 @@ function SideBar({ activeClass }) {
                     </ul> 
                 </div> 
             </div> 
-        </div> 
+        </div>
     )
 }
 
