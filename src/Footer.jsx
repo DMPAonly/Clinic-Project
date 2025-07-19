@@ -1,136 +1,52 @@
+import style from "./assets/footer.module.css";
+
 function Footer() {
+    const socials = [{
+        class: style.colorFacebook,
+        href: "#",
+        label: "Facebook",
+        title: "Facebook",
+        iclass: "bi bi-facebook"
+    },
+    {
+        class: style.colorTwitter,
+        href: "#",
+        label: "Twitter",
+        title: "Twitter",
+        iclass: "bi bi-twitter"
+    },
+    {
+        class: style.colorInstagram,
+        href: "#",
+        label: "Instagram",
+        title: "Instagram",
+        iclass: "bi bi-instagram"
+    },
+    {
+        class: style.colorLinkedin,
+        href: "#",
+        label: "Linkedin",
+        title: "Linkedin",
+        iclass: "bi bi-linkedin"
+    }];
 
     return (
-        <>
-        <style>
-            {`
-                footer {
-                    background-color: #47ab14;
-                    padding: 4rem 2rem;
-                    overflow: hidden;
-                    position: relative;
-                    font-size: 1rem;
-                    user-select: none;
-                }
-
-                /* Sliding marquee text */
-                .marquee {
-                    display: inline-block;
-                    white-space: nowrap;
-                    animation: marqueeSlide 15s linear infinite;
-                    font-weight: 600;
-                    letter-spacing: 0.05em;
-                    color:rgb(255, 255, 255);
-                    text-transform: uppercase;
-                }
-
-                @keyframes marqueeSlide {
-                    0% {
-                        transform: translateX(100%);
-                    }
-                    100% {
-                        transform: translateX(-100%);
-                    }
-                }
-
-                .footer-content {
-                    display: flex;
-                    flex-wrap: wrap;
-                    justify-content: space-between;
-                    align-items: center;
-                    gap: 0.75rem;
-                }
-
-                .copyright {
-                    flex: 1 1 auto;
-                    color: #bbb;
-                }
-
-                .social-icons {
-                    flex: 0 0 auto;
-                    display: flex;
-                    gap: 1rem;
-                }
-
-                .social-icons a {
-                    color: #bbb;
-                    font-size: 1.4rem;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    transition: color 0.3s ease, transform 0.3s ease;
-                    position: relative;
-                }
-
-                .social-icons .color-facebook:hover {
-                    color: #1877F2;
-                    transform: scale(1.3);
-                    text-shadow: 0 0 8px #1877F2;
-                    z-index: 10;
-                }
-
-                .social-icons .color-twitter:hover {
-                    color: #1DA1F2;
-                    transform: scale(1.3);
-                    text-shadow: 0 0 8px #1DA1F2;
-                    z-index: 10;
-                }
-
-                .social-icons .color-instagram:hover {
-                    color: #D62976;
-                    transform: scale(1.3);
-                    text-shadow: 0 0 8px #D62976;
-                    z-index: 10;
-                }
-
-                .social-icons .color-linkedin:hover {
-                    color: #0077B5;
-                    transform: scale(1.3);
-                    text-shadow: 0 0 8px #0077B5;
-                    z-index: 10;
-                }
-
-                /* Add subtle pulse animation on hover */
-                .social-icons a:focus,
-                .social-icons a:hover {
-                    animation: pulseGlow 2s infinite alternate;
-                    outline: none;
-                }
-
-                @keyframes pulseGlow {
-                    from {
-                        text-shadow: 0 0 6px #0d6efd;
-                    }
-                    to {
-                        text-shadow: 0 0 14px #66b0ff;
-                    }
-                }
-
-                @media (max-width: 480px) {
-                    .footer-content {
-                        flex-direction: column;
-                        text-align: center;
-                    }
-                    .social-icons {
-                        justify-content: center;
-                    }
-                }
-        `}
-  </style>
         <footer>
-            <div className="footer-content">
-                <div className="copyright">
+            <div className={style.footerContent}>
+                <div className={style.copyright}>
                     © Family Care Electro Homeopathic Clinic
                 </div>
-                <div className="social-icons" aria-label="Social Media Links">
-                    <a className="color-facebook" href="#" aria-label="Facebook" title="Facebook"><i className="bi bi-facebook"></i></a>
-                    <a className="color-twitter" href="#" aria-label="Twitter" title="Twitter"><i className="bi bi-twitter"></i></a>
-                    <a className="color-instagram" href="#" aria-label="Instagram" title="Instagram"><i className="bi bi-instagram"></i></a>
-                    <a className="color-linkedin" href="#" aria-label="LinkedIn" title="LinkedIn"><i className="bi bi-linkedin"></i></a>
+                <div className={style.socialIcons} aria-label="Social Media Links">
+                    {socials.map((social) => {
+                        return (
+                            <a className={social.class} href={social.href} aria-label={social.label} title={social.title}>
+                                <i className={social.iclass}></i>
+                            </a>
+                        )
+                    })}
                 </div>
             </div>
         </footer>
-        </>
     )
 }
 
