@@ -1,5 +1,6 @@
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import style from "./assets/header.module.css";
 
 function Header() {
     const location = useLocation();
@@ -11,41 +12,12 @@ function Header() {
     }
 
     useEffect(() => {
-    // Destroy previous menu if exists
-    /*if ($('.slicknav_menu').length > 0) {
-      $('.slicknav_menu').remove();
-    }
-
-    // Re-initialize SlickNav
-    $('#menu').slicknav({
-      prependTo: ".mobile-nav",
-      duration: 300,
-      closeOnClick: true,
-    });*/
-    toggleNav();
-  }, [location.pathname]); // Runs whenever the route changes
+        if(isOpen == true){
+            toggleNav();
+        }
+    }, [location.pathname]); 
 
     return (
-        <>
-        <style>
-            {`
-                .btn {
-                    margin-top: 13px;
-                    background-color: #47ab14;
-                    border: none;
-                    border-radius: 6px;
-                    padding: 0.5rem 1rem;
-                    font-size: 0.95rem;
-                    color: white;
-                    cursor: pointer;
-                    transition: background-color 0.3s ease;
-                }
-                .btn:hover {
-                    background-color: #47ab14;
-                    color: #ffffff;
-                }
-            `}
-        </style>
         <header className="header">
             <div className="header-inner">
                 <div className="container">
@@ -92,7 +64,7 @@ function Header() {
                             </div>
                             <div className="col-lg-2 col-12">
                                 <div className="get-quote">
-                                    <Link to="/Patient_Form" className="btn">Book Appointment</Link>
+                                    <Link to="/Patient_Form" className={style.btn}>Book Appointment</Link>
                                 </div>
                             </div>
                         </div>
@@ -100,7 +72,6 @@ function Header() {
                 </div>
             </div>    
         </header>
-        </>
     )
 }
 
