@@ -37,9 +37,9 @@ function Footer() {
                     © Family Care Electro Homeopathic Clinic
                 </div>
                 <div className={style.socialIcons} aria-label="Social Media Links">
-                    {socials.map((social) => {
+                    {socials.map((social, i) => {
                         return (
-                            <a className={social.class} href={social.href} aria-label={social.label} title={social.title}>
+                            <a key={i} className={social.class} href={social.href} aria-label={social.label} title={social.title}>
                                 <i className={social.iclass}></i>
                             </a>
                         )

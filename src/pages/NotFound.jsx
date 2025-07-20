@@ -6,15 +6,7 @@ function NotFound() {
     }, []);
 
     return (
-        <>
-        <style>
-            {`
-                main{
-                    min-height: 100vh;
-                }
-            `}
-        </style>
-        <main>
+        <main style={{minHeight: "100vh"}}>
             <section class="error-page section">
                 <div class="container">
                     <div class="row">
@@ -23,10 +15,6 @@ function NotFound() {
                             <div class="error-inner">
                                 <h1>404<span>Oop's  sorry we can't find that page!</span></h1>
                                 <p>Aenean eget sollicitudin lorem, et pretium felis. Nullam euismod diam libero, sed dapibus leo laoreet ut. Suspendisse potenti. Phasellus urna lacus</p>
-                                <form class="search-form">
-                                    <input placeholder="Search from Here" type="text" />
-                                    <button class="btn" type="submit"><i class="fa fa-search"></i></button>
-                                </form>
                             </div>
                             {/* End Error Inner */}
                         </div>
@@ -34,7 +22,6 @@ function NotFound() {
                 </div>
             </section>	
         </main>
-        </>
     )
 }
 

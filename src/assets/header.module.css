@@ -56,15 +56,15 @@
 	color:#47ab14;
 	margin-right:8px;
 }
-.header .header-inner {
+.header .headerInner {
 	background:#fff;
 	z-index:999;
 	width:100%;
 }
-.get-quote{
+.getQuote{
 	margin-top:12px;
 }
-.get-quote .btn{
+.getQuote .btn{
 	color:#fff;
 }
 .header .logo {
@@ -134,7 +134,7 @@
 	font-size: 13px;
 }
 /* Middle Header */
-.header.style2 .header-inner {
+.header.style2 .headerInner {
 	border-top: 1px solid #eee;
 }
 .header.style2 .logo {
@@ -147,7 +147,7 @@
 .header .widget-main{
 	float:right;
 }
-.header.style2 .get-quote {
+.header.style2 .getQuote {
 	margin-top: 0;
 }
 .header .single-widget {
@@ -246,7 +246,7 @@
 	border-color:transparent;
 }
 /* Right Bar */
-.header.style2 .main-menu{
+.header.style2 .mainMenu{
 	/*display:inline-block;*/
 	float:left;
 }
@@ -330,7 +330,7 @@
 	border-color:#e6e6e6;
 }
 /* Header Sticky */
-.header.sticky .header-inner{
+.header.sticky .headerInner{
 	position:fixed;
 	z-index:999;
 	top:0;
@@ -375,7 +375,7 @@
 }
 
 /* Mobile nav hidden by default */
-.mobile-nav {
+.mobileNav {
     display: none;
     background-color: #fff;
     position: absolute;
@@ -391,24 +391,24 @@
     }
 
 	/* Show nav when open */
-	.mobile-nav.open {
+	.mobileNav.open {
 		display: block;
 	}
 	
-	.mobile-nav ul {
+	.mobileNav ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
 
-    .mobile-nav li {
+    .mobileNav li {
         padding: 10px 20px;
         border-bottom: 1px solid #eee;
 		text-decoration: none;
 		color: #333;
     }
 
-	.mobile-nav li:hover{
+	.mobileNav li:hover{
 		background-color: #47ab14;
 		color: #ffffff;
 	}
@@ -416,4 +416,8 @@
     .btn {
         display: none;
     }
+
+	.mainMenu {
+		display: none;
+	}
 }

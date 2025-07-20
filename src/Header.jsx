@@ -24,24 +24,24 @@ function Header() {
     }, [location.pathname]); 
 
     return (
-        <header className="header">
-            <div className="header-inner">
+        <header className={style.header}>
+            <div className={style.headerInner}>
                 <div className="container">
                     <div className="inner">
                         <div className="row">
                             <div className="col-lg-3 col-md-3 col-12">
-                                <div className="burger" onClick={toggleNav}>
-                                    <div className="line"></div>
-                                    <div className="line"></div>
-                                    <div className="line"></div>
+                                <div className={style.burger} onClick={toggleNav}>
+                                    <div className={style.line}></div>
+                                    <div className={style.line}></div>
+                                    <div className={style.line}></div>
                                 </div>
                                 {/*Start Logo*/}
-                                <div className="logo">
+                                <div className={style.logo}>
                                     <Link to="/"><img src="../img/logo.png" alt="Electro Homeopathic Clinic" /></Link>
                                 </div>
                                 {/*End Logo*/}
                                 {/*Mobile Nav*/}
-                                <div className={`mobile-nav ${isOpen ? 'open' : ''}`}>
+                                <div className={isOpen ? `${style.mobileNav} ${style.open}` : style.mobileNav}>
                                     <ul id='menu'>
                                         {Links.map((l, i) => {
                                             return <li key={i}><NavLink to={l.link}>{l.name}</NavLink></li>
@@ -52,9 +52,9 @@ function Header() {
                             </div>
                             <div className="col-lg-7 col-md-9 col-12">
                                 {/*Main Menu*/}
-                                <div className="main-menu">
+                                <div className={style.mainMenu}>
                                     <nav className="navigation">
-                                        <ul className="nav menu">
+                                        <ul className={`${style.nav} menu`}>
                                             {Links.map((l, i) => {
                                                 if(l.name !== "Book Appointment"){
                                                     return (
@@ -70,7 +70,7 @@ function Header() {
                                 {/*End Main Menu*/}
                             </div>
                             <div className="col-lg-2 col-12">
-                                <div className="get-quote">
+                                <div className={style.getQuote}>
                                     <Link to="/Patient_Form" className={style.btn}>Book Appointment</Link>
                                 </div>
                             </div>

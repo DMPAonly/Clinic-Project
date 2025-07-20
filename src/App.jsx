@@ -1,4 +1,5 @@
 import { Routes, Route, useLocation } from 'react-router-dom';
+import * as $ from 'jquery';
 import PreLoader from './components/PreLoader.jsx';
 import Header from './Header.jsx';
 import Footer from './Footer.jsx';
