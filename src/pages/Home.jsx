@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import OwlCarousel from "react-owl-carousel";
+import ReactOwlCarousel from "react-owl-carousel";
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
@@ -25,7 +25,7 @@ function Home() {
 			{/*Slider Area*/}
 			<section className="slider">
 				<div className="hero-slider">
-					<OwlCarousel className="owl-theme" {...options}>
+					<ReactOwlCarousel className="owl-theme" {...options}>
 						<div className="single-slider" style={{backgroundImage: `url('img/slider2.jpg')`}}>
 							<div className="container">
 								<div className="row">
@@ -59,7 +59,7 @@ function Home() {
 								</div>
 							</div>
 						</div>
-					</OwlCarousel>
+					</ReactOwlCarousel>
 				</div>
 			</section>
 			{/*End Slider Area*/}
