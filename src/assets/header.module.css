@@ -1,6 +1,9 @@
 .header{
 	background-color:#fff;
 	position:relative;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	font-size:14px;
 }
 
 .header .navbar-collapse{
@@ -62,14 +65,19 @@
 	width:100%;
 }
 .getQuote{
-	margin-top:12px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
 }
 .getQuote .btn{
 	color:#fff;
 }
 .header .logo {
 	float: left;
-	margin-top: 18px;
+	margin-top: 5px;
 }
 .header .navbar {
 	background: none;
@@ -344,7 +352,8 @@
 }
 
 .btn {
-    margin-top: 13px;
+	display: block;
+	width: 90%;
     background-color: #47ab14;
     border: none;
     border-radius: 6px;
@@ -353,9 +362,11 @@
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
+	text-align: center;
+	text-decoration: none;
 }
 .btn:hover {
-    background-color: #47ab14;
+    background-color: #228011;
     color: #ffffff;
 }
 
@@ -383,6 +394,10 @@
     left: 0;
     width: 100%;
     z-index: 1000;
+}
+
+ul {
+	margin-bottom: 5px;
 }
 
 @media (max-width: 480px) {

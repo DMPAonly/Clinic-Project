@@ -514,8 +514,8 @@ body{
 	Start Feautes CSS
 ===============================*/
 .Feautes{
-	margin-top: 50px;
-	padding-top:0;
+	padding: 100px auto 100px auto;
+	background-color: white;
 }
 .Feautes.index2{
 	padding-top:150px;
