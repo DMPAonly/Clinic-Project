@@ -1,11 +1,11 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ReactOwlCarousel from "react-owl-carousel";
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 function Home() {
-	
+	const [OwlCarousel, setOwlCarousel] = useState(null);
+
 	const options = {
 		items: 1,
 		loop: true,
@@ -18,6 +18,9 @@ function Home() {
 
 	useEffect(() => {
 		document.title = "Electro Homeopathic Clinic";
+		import("react-owl-carousel").then((mod) => {
+		setOwlCarousel(() => mod.default);
+		});
   	}, []);
 
     return (
@@ -25,7 +28,8 @@ function Home() {
 			{/*Slider Area*/}
 			<section className="slider">
 				<div className="hero-slider">
-					<ReactOwlCarousel className="owl-theme" {...options}>
+					{OwlCarousel ? (
+					<OwlCarousel className="owl-theme" {...options}>
 						<div className="single-slider" style={{backgroundImage: `url('img/slider2.jpg')`}}>
 							<div className="container">
 								<div className="row">
@@ -59,7 +63,10 @@ function Home() {
 								</div>
 							</div>
 						</div>
-					</ReactOwlCarousel>
+					</OwlCarousel>
+					) : (
+					<p>Loading Slides...</p>
+					)}
 				</div>
 			</section>
 			{/*End Slider Area*/}
