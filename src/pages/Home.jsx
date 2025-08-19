@@ -1,26 +1,47 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
+import Slider from "react-slick";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function Home() {
-	const [OwlCarousel, setOwlCarousel] = useState(null);
 
-	const options = {
-		items: 1,
-		loop: true,
+	const PrevArrow = ({ onClick }) => (
+		<div
+			className="custom-arrow prev-arrow"
+			onClick={onClick}
+			style={{ left: "10px" }}
+		>
+			<FaArrowLeft />
+		</div>
+	);
+
+	const NextArrow = ({ onClick }) => (
+		<div
+			className="custom-arrow next-arrow"
+			onClick={onClick}
+			style={{ right: "10px" }}
+		>
+			<FaArrowRight />
+		</div>
+	);
+
+	const settings = {
+		dots: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
 		autoplay: true,
-		autoplayTimeout: 4000,
-		nav: true,
-		dots: false,
-		navText: ["<", ">"]
-	}
+		autoplaySpeed: 4000,
+		arrows: true,
+		prevArrow: <PrevArrow />,
+		nextArrow: <NextArrow />,
+	};
 
 	useEffect(() => {
 		document.title = "Electro Homeopathic Clinic";
-		import("react-owl-carousel").then((mod) => {
-		setOwlCarousel(() => mod.default);
-		});
   	}, []);
 
     return (
@@ -28,9 +49,8 @@ function Home() {
 			{/*Slider Area*/}
 			<section className="slider">
 				<div className="hero-slider">
-					{OwlCarousel ? (
-					<OwlCarousel className="owl-theme" {...options}>
-						<div className="single-slider" style={{backgroundImage: `url('img/slider2.jpg')`}}>
+					<Slider className="owl-theme" {...settings}>
+						<div className="single-slider slide1" style={{backgroundColor: "url('/img/slider2.jpg')"}}>
 							<div className="container">
 								<div className="row">
 									<div className="col-lg-7">
@@ -46,7 +66,7 @@ function Home() {
 							</div>
 						</div>
 						{/* 2 item */}
-						<div className="single-slider" style={{backgroundImage:`url('img/slider3.jpg')`}}>
+						<div className="single-slider slide2" style={{backgroundImage:`url('/img/slider3.jpg')`}}>
 							<div className="container">
 								<div className="row">
 									<div className="col-lg-7">
@@ -63,10 +83,7 @@ function Home() {
 								</div>
 							</div>
 						</div>
-					</OwlCarousel>
-					) : (
-					<p>Loading Slides...</p>
-					)}
+					</Slider>
 				</div>
 			</section>
 			{/*End Slider Area*/}

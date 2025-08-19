@@ -3983,3 +3983,30 @@ body{
 	End admin-panel CSS
 ===========================*/
 
+.slide1{
+	background-image: url('/img/slider2.jpg');
+}
+
+.slide2{
+	background-image: url('/img/slider3.jpg');
+}
+
+.custom-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  cursor: pointer;
+  transform: translateY(-50%);
+  color: white;
+  border-radius: 45%;
+}
+
+.prev-arrow {
+  left: 15px;
+}
+
+.next-arrow {
+  right: 15px;
+}
