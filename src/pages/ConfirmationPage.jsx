@@ -1,4 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function ConfirmationPage() {
     const { state: formData } = useLocation();
@@ -9,7 +10,15 @@ function ConfirmationPage() {
     }
 
     const handleSubmit = () => {
-        $('#staticBackdrop').modal('show'); 
+        //$('#staticBackdrop').modal('show'); 
+        try{
+            axios.post("http://localhost:8080/clinic/createPatient", formData)
+        .then(response => {
+            console.log(response.data);
+        });
+        } catch(error){
+            console.error("Error fetching data", error);
+        }
     };
 
     function goHome() {
