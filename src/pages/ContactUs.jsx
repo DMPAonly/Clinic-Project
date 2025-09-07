@@ -19,6 +19,11 @@ function ContactUs() {
 
 	async function handleSubmit(e) {
 		e.preventDefault();
+		const form = e.target;
+        if (!form.checkValidity()) {
+            form.classList.add("was-validated");
+            return;
+        }
 		try{
 			const result = await axios.post("http://localhost:8080/contact/tryContact", data);
 			console.log(result);
@@ -58,31 +63,61 @@ function ContactUs() {
 								<h2>Contact With Us</h2>
 								<p>If you have any questions please feel free to contact with us.</p>
 								{/* Form */}
-								<form className="form" method="post" onSubmit={handleSubmit}>
+								<form className="form needs-validation" method="post" onSubmit={handleSubmit} noValidate>
 									<div className="row">
 										<div className="col-lg-6">
 											<div className="form-group">
-												<input type="text" name="name" placeholder="Name" required="" onChange={handleChange} value={data.name}/>
+												<input className="form-control input-fields" pattern="[A-Za-z]+" type="text" name="name" placeholder="Name" onChange={handleChange} value={data.name} required/>
+												<div className="valid-feedback">
+													Looks good!
+												</div>
+												<div className="invalid-feedback">
+													Please enter valid name
+												</div>
 											</div>
 										</div>
 										<div className="col-lg-6">
 											<div className="form-group">
-												<input type="email" name="email" placeholder="Email" required="" onChange={handleChange} value={data.email}/>
+												<input className="form-control input-fields" type="email" name="email" placeholder="Email" onChange={handleChange} value={data.email} required/>
+												<div className="valid-feedback">
+													Looks good!
+												</div>
+												<div className="invalid-feedback">
+													Please enter your valid email ID
+												</div>
 											</div>
 										</div>
 										<div className="col-lg-6">
 											<div className="form-group">
-												<input type="text" name="phone" placeholder="Phone" required="" onChange={handleChange} value={data.phone}/>
+												<input className="form-control input-fields" type="number" name="phone" placeholder="Phone" onChange={handleChange} value={data.phone} required/>
+												<div className="valid-feedback">
+													Looks good!
+												</div>
+												<div className="invalid-feedback">
+													Please enter your valid contact no.
+												</div>
 											</div>
 										</div>
 										<div className="col-lg-6">
 											<div className="form-group">
-												<input type="text" name="subject" placeholder="Subject" required="" onChange={handleChange} value={data.subject}/>
+												<input className="form-control input-fields" type="text" name="subject" placeholder="Subject" onChange={handleChange} value={data.subject} required/>
+												<div className="valid-feedback">
+													Looks good!
+												</div>
+												<div className="invalid-feedback">
+													Please enter a Subject for your message
+												</div>
 											</div>
 										</div>
 										<div className="col-lg-12">
 											<div className="form-group">
-												<textarea name="message" placeholder="Your Message" required="" onChange={handleChange} value={data.message}></textarea>
+												<textarea className="form-control input-fields" name="message" placeholder="Your Message" onChange={handleChange} value={data.message} required></textarea>
+												<div className="valid-feedback">
+													Looks good!
+												</div>
+												<div className="invalid-feedback">
+													Please enter your message or query
+												</div>
 											</div>
 										</div>
 										<div className="col-12">
