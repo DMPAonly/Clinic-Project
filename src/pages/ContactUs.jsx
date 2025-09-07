@@ -1,14 +1,30 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 function ContactUs() {
 	useEffect(() => {
 		document.title = "Contact Us";
 	}, []);
 
-	function handleSubmit(e) {
+	const [data, setData] = useState({name: "", email: "", phone: "", subject: "", message: ""});
+
+	function handleChange(e) {
+		const name = e.target.name;
+		const value = e.target.value;
+		setData((pre) => {
+			return {...pre, [name] : value} 
+		});
+	}
+
+	async function handleSubmit(e) {
 		e.preventDefault();
-		console.log("Submitted");
+		try{
+			const result = await axios.post("http://localhost:8080/contact/tryContact", data);
+			console.log(result);
+		} catch(err){
+			console.error("Something went wrong: ", err);
+		}
 	}
 	
     return (
@@ -40,33 +56,33 @@ function ContactUs() {
 						<div className="col-lg-6">
 							<div className="contact-us-form">
 								<h2>Contact With Us</h2>
-								<p>If you have any questions please fell free to contact with us.</p>
+								<p>If you have any questions please feel free to contact with us.</p>
 								{/* Form */}
 								<form className="form" method="post" onSubmit={handleSubmit}>
 									<div className="row">
 										<div className="col-lg-6">
 											<div className="form-group">
-												<input type="text" name="name" placeholder="Name" required="" />
+												<input type="text" name="name" placeholder="Name" required="" onChange={handleChange} value={data.name}/>
 											</div>
 										</div>
 										<div className="col-lg-6">
 											<div className="form-group">
-												<input type="email" name="email" placeholder="Email" required="" />
+												<input type="email" name="email" placeholder="Email" required="" onChange={handleChange} value={data.email}/>
 											</div>
 										</div>
 										<div className="col-lg-6">
 											<div className="form-group">
-												<input type="text" name="phone" placeholder="Phone" required="" />
+												<input type="text" name="phone" placeholder="Phone" required="" onChange={handleChange} value={data.phone}/>
 											</div>
 										</div>
 										<div className="col-lg-6">
 											<div className="form-group">
-												<input type="text" name="subject" placeholder="Subject" required="" />
+												<input type="text" name="subject" placeholder="Subject" required="" onChange={handleChange} value={data.subject}/>
 											</div>
 										</div>
 										<div className="col-lg-12">
 											<div className="form-group">
-												<textarea name="message" placeholder="Your Message" required=""></textarea>
+												<textarea name="message" placeholder="Your Message" required="" onChange={handleChange} value={data.message}></textarea>
 											</div>
 										</div>
 										<div className="col-12">
