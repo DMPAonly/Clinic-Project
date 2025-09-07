@@ -27,6 +27,7 @@ function ContactUs() {
 		try{
 			const result = await axios.post("http://localhost:8080/contact/tryContact", data);
 			console.log(result);
+			setData({name: "", email: "", phone: "", subject: "", message: ""});
 		} catch(err){
 			console.error("Something went wrong: ", err);
 		}
