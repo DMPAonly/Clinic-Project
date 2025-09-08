@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 function ProductAdmin() {
     const [showModal, setShowModal] = useState(false);
     const [products, setProducts] = useState([]);
-    const [newProduct, setNewProduct] = useState({id: "", name: "", price: "", stock: "", desc: "", img: ""});
+    const [newProduct, setNewProduct] = useState({id: "", name: "", price: "", quantity: "", description: "", img: ""});
     const [editId, setEditId] = useState(null);
     const [hover, setHover] = useState(false);
 
     useEffect(() => {
-        setProducts([{
+        /*setProducts([{
                 id: 1,
                 name: "Product-1",
                 price: "$10",
@@ -24,8 +25,15 @@ function ProductAdmin() {
                 desc: "Lorem Ipsum",
                 img: "/img/product-photos/1957060443.jpg"
             }
-        ]);
+        ]);*/
+        getProducts();
     }, []);
+
+    async function getProducts() {
+        const response = await axios.get("http://localhost:8080/products/getAll");
+        const result = response.data
+        setProducts(result);
+    }
 
     function handleChange(e) {
         if(e.target.name === 'img'){
@@ -103,8 +111,8 @@ function ProductAdmin() {
                             <td>{index + 1}</td>
                             <td>{product.name}</td>
                             <td>{product.price}</td>
-                            <td>{product.stock}</td>
-                            <td>{product.desc}</td>
+                            <td>{product.quantity}</td>
+                            <td>{product.description}</td>
                             <td><img src={product.img} alt={product.name} width="80" /></td>
                             <td>      
                                 <button className="custom-btn-1 btn-sm btn-info mr-2" onClick={() => handleEdit(product)}
@@ -140,11 +148,11 @@ function ProductAdmin() {
                                 </div>
                                 <div className="form-group">
                                     <label>Stock</label>
-                                    <input type="number" className="form-control" name="stock" value={newProduct.stock} onChange={handleChange} required />
+                                    <input type="number" className="form-control" name="stock" value={newProduct.quantity} onChange={handleChange} required />
                                 </div>
                                 <div className="form-group">
                                     <label>Description</label>
-                                    <input type="text" className="form-control" name="desc" value={newProduct.desc} onChange={handleChange} required />
+                                    <input type="text" className="form-control" name="desc" value={newProduct.description} onChange={handleChange} required />
                                 </div>
                                 <div className="form-group">
                                     <label>Image</label>
