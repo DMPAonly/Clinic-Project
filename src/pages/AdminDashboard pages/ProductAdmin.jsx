@@ -33,12 +33,23 @@ function ProductAdmin() {
         const response = await axios.get("http://localhost:8080/products/getAll");
         const result = response.data
         setProducts(result);
+        console.log(response.data);
     }
 
     function handleChange(e) {
         if(e.target.name === 'img'){
+            let base64String = "";
             const imgfile = e.target.files[0];
-            setNewProduct({...newProduct, img: imgfile});
+            let reader = new FileReader();
+            reader.onload = () => {
+                base64String = reader.result;
+                setNewProduct((pre) => {
+                    return {...pre, img: base64String};
+                });
+                console.log(newProduct);
+            }
+            reader.readAsDataURL(imgfile);
+            
         } else{
             const name = e.target.name;
             const value = e.target.value;
@@ -46,9 +57,9 @@ function ProductAdmin() {
         }
     }
 
-    function handleAddorEditProduct(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
-        const imageURL = newProduct.img ? URL.createObjectURL(newProduct.img) : newProduct.img;
+        /*const imageURL = newProduct.img ? URL.createObjectURL(newProduct.img) : newProduct.img;
         console.log(imageURL);
         const product = {
             id: editId ? editId : products.length + 1,
@@ -71,22 +82,51 @@ function ProductAdmin() {
         }
         setNewProduct({ name: '', price: '', stock: '', desc: '', img: null });
         setEditId(null);
-        setShowModal(false);
+        setShowModal(false);*/
+        if(editId){
+            try{
+                console.log(newProduct);
+                const response = await axios.patch("http://localhost:8080/products/updateProduct", newProduct);
+                console.log(response);
+            } catch(err){
+                console.error("Error updating data: ", err);
+            } finally{
+                setNewProduct({id : '', name: '', price: '', quantity: '', description: '', img: null });
+                setEditId(null);
+                setShowModal(false);
+                getProducts();
+            }
+        } else{
+            try{
+                console.log(newProduct);
+                const response = await axios.post("http://localhost:8080/products/insertProduct", newProduct);
+                console.log(response);
+            } catch(err){
+                console.error("Error updating data: ", err);
+            } finally{
+                setNewProduct({id : '', name: '', price: '', quantity: '', description: '', img: null });
+                setShowModal(false);
+                getProducts();
+            }
+        }  
     }
 
     function handleEdit(product) {
-        console.log(product);
         setNewProduct(product);
         setEditId(product.id);
         setShowModal(true);
+        console.log(product);
+        console.log(product.id);
     }
 
-    function handleDelete(id) {
-        setProducts(products.filter((p) => {
-            if(id !== p.id){
-                return p;
-            }
-        }))
+    async function handleDelete(id) {
+        try{
+            const response = await axios.delete(`http://localhost:8080/products/deleteProduct/${id}`);
+            console.log(response);
+            getProducts();
+        } catch(err) {
+            console.error("Error deleting Product: ", err);
+        }
     }
 
     return (
@@ -136,7 +176,7 @@ function ProductAdmin() {
                                 <span>&times;</span>
                             </button>
                         </div>
-                        <form onSubmit={handleAddorEditProduct}>
+                        <form onSubmit={handleSubmit}>
                             <div className="modal-body">
                                 <div className="form-group">
                                     <label>Product Name</label>
@@ -148,15 +188,19 @@ function ProductAdmin() {
                                 </div>
                                 <div className="form-group">
                                     <label>Stock</label>
-                                    <input type="number" className="form-control" name="stock" value={newProduct.quantity} onChange={handleChange} required />
+                                    <input type="number" className="form-control" name="quantity" value={newProduct.quantity} onChange={handleChange} required />
                                 </div>
                                 <div className="form-group">
                                     <label>Description</label>
-                                    <input type="text" className="form-control" name="desc" value={newProduct.description} onChange={handleChange} required />
+                                    <input type="text" className="form-control" name="description" value={newProduct.description} onChange={handleChange} required />
                                 </div>
                                 <div className="form-group">
                                     <label>Image</label>
-                                    <input type="file" className="form-control" name="img" onChange={handleChange} accept="image/*" required />
+                                    {editId ? 
+                                        <input type="file" className="form-control" name="img" onChange={handleChange} accept="image/*" /> :
+                                        <input type="file" className="form-control" name="img" onChange={handleChange} accept="image/*" required />
+                                    }
+                                    <img src={newProduct.img} />
                                 </div>
                             </div>
                             <div className="modal-footer">
