@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 import Dashboard from "./AdminDashboard pages/Dashboard";
 import SideBar from "./AdminDashboard pages/SideBar";
 import ProductAdmin from "./AdminDashboard pages/ProductAdmin";
@@ -21,28 +22,7 @@ function AdminDashboard() {
         if(root){
             root.style.height = "100%";
         }
-
-        setForms([{
-                id: 1,
-                fname: "Demof1",
-                lname: "Demol1",
-                age: 28,
-                mail: "demo1@example.com",
-                doa: "2025-06-14",
-                reason: "Fever and cold",
-                extra: ""
-            },
-            {
-                id: 2,
-                fname: "Demof2",
-                lname: "Demol2",
-                age: 35,
-                mail: "demo2@example.com",
-                doa: "2025-06-16",
-                reason: "Skin rash",
-                extra: ""
-            }
-        ]);
+        getForms();
         console.log(forms);
 
         return () => {
@@ -51,6 +31,11 @@ function AdminDashboard() {
             }
         }
     }, []);
+
+    async function getForms() {
+        const response = await axios.get("http://localhost:8080/clinic/getAllPatients");
+        setForms(response.data);
+    }
 
     function handleClassActivation(result){
         setActive(result);
@@ -147,7 +132,7 @@ function AdminDashboard() {
             <div className="container-fluid" style={{ height: "100%"}}> 
                 <div className="row" style={{ height: "100%"}}> 
                     <SideBar activeClass={handleClassActivation}/>
-                    <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4"> 
+                    <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4" style={{display: "block"}}> 
                         <div className="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"> 
                             <h1 className="h2">Dashboard</h1> 
                             {/*<div className="btn-toolbar mb-2 mb-md-0"> 

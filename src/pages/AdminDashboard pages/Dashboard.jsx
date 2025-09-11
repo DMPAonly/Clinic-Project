@@ -21,7 +21,7 @@ function Dashboard(props) {
                             <td>{i + 1}</td>
                             <td>{form.fname} {form.lname}</td>
                             <td>{form.age}</td>
-                            <td>{form.mail}</td>
+                            <td>{form.email}</td>
                             <td>{form.doa}</td>
                             <td>{form.reason}</td>
                             <td>{form.extra}</td>

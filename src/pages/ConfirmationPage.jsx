@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function ConfirmationPage() {
+    const [showModal, setShowModal] = useState(false);
     const { state: formData } = useLocation();
     const navigate = useNavigate();
 
@@ -13,22 +15,19 @@ function ConfirmationPage() {
         //$('#staticBackdrop').modal('show'); 
         try{
             axios.post("http://localhost:8080/clinic/createPatient", formData)
-        .then(response => {
-            console.log(response.data);
-        });
+            .then(response => {
+                console.log(response.data);
+            });
         } catch(error){
             console.error("Error fetching data", error);
+        } finally{
+            setShowModal(true);
         }
     };
 
     function goHome() {
-        const $modal = $('#staticBackdrop');
-
-        $modal.one('hidden.bs.modal', () => {
-            navigate("/"); 
-        });
-
-        $modal.modal('hide');
+        setShowModal(false);
+        navigate("/");
     }
 
     return (
@@ -56,21 +55,23 @@ function ConfirmationPage() {
                     </div>
                 </div>
             </div>
-            <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabIndex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-                <div className="modal-dialog modal-dialog-centered">
+            {/*Modal*/}
+            <div className={`modal fade ${showModal ? 'show d-block' : ''}`} tabIndex="-1" role="dialog" style={{ backgroundColor: showModal ? 'rgba(0,0,0,0.5)' : 'transparent' }}>
+                <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h1 className="modal-title fs-5" id="staticBackdropLabel">Success!</h1>
+                            <h5 className="modal-title"><b>Success!</b>✅</h5>
                         </div>
-                        <div className="modal-body">
-                            Your form is submitted, we will contact you as soon as possible...
-                        </div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-primary" id="ok-btn" onClick={goHome}>Go back to home</button>
-                        </div>
+                            <div className="modal-body">
+                                <p>Your form has been submitted, further details will be shared to your mail and whether your appointment will be on the date by provided by you will be up to doctor's availability.</p>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className="custom-btn-2 btn-sm btn-danger" onClick={goHome}>OK</button>
+                            </div>
                     </div>
                 </div>
             </div>
+            {/*End Modal*/}
         </div>
     )
 }

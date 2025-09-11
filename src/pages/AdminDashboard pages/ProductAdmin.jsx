@@ -4,7 +4,7 @@ import axios from "axios";
 function ProductAdmin() {
     const [showModal, setShowModal] = useState(false);
     const [products, setProducts] = useState([]);
-    const [newProduct, setNewProduct] = useState({id: "", name: "", price: "", quantity: "", description: "", img: ""});
+    const [newProduct, setNewProduct] = useState({name: "", price: "", quantity: "", description: "", img: ""});
     const [editId, setEditId] = useState(null);
     const [hover, setHover] = useState(false);
 
@@ -85,13 +85,15 @@ function ProductAdmin() {
         setShowModal(false);*/
         if(editId){
             try{
-                console.log(newProduct);
+                setNewProduct((pre) => {
+                    return {...pre, id : editId};
+                });
                 const response = await axios.patch("http://localhost:8080/products/updateProduct", newProduct);
                 console.log(response);
             } catch(err){
                 console.error("Error updating data: ", err);
             } finally{
-                setNewProduct({id : '', name: '', price: '', quantity: '', description: '', img: null });
+                setNewProduct({name: '', price: '', quantity: '', description: '', img: null });
                 setEditId(null);
                 setShowModal(false);
                 getProducts();
@@ -104,7 +106,7 @@ function ProductAdmin() {
             } catch(err){
                 console.error("Error updating data: ", err);
             } finally{
-                setNewProduct({id : '', name: '', price: '', quantity: '', description: '', img: null });
+                setNewProduct({name: '', price: '', quantity: '', description: '', img: null });
                 setShowModal(false);
                 getProducts();
             }

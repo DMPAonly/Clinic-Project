@@ -32,7 +32,7 @@ function DoctorsList() {
     }, []);
     
     return (
-        <main>
+        <main className={styles.mainBody}>
             <section className={styles.doctorList} aria-label="List of doctors">
                 {docList.map((doc) => {
                     return (

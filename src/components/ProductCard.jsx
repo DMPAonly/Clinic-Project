@@ -7,6 +7,8 @@ function ProductCard(props) {
             <div className={style.productInfo}>
                 <h2 className={style.productTitle}>{props.title}</h2>
                 <p className={style.productDescription}>{props.desc}</p>
+                <br></br>
+                <p className={style.productDescription}><b>{props.price}</b></p>
             </div>
         </div>
     )

@@ -11,7 +11,7 @@ function PatientForm() {
         mname: "",
         lname: "",
         age: "",
-        mail: "",
+        email: "",
         doa: "",
         reason: "",
         extra: "",
@@ -103,7 +103,7 @@ function PatientForm() {
                                     </div>
                                     <div className="mb-3">
                                         <label htmlFor="mail" className="form-label">Email ID:</label>
-                                        <input type="email" className="form-control input-fields" id="mail" name="mail" onChange={handleChange} value={formData.mail} required/>
+                                        <input type="email" className="form-control input-fields" id="mail" name="email" onChange={handleChange} value={formData.mail} required/>
                                         <div className="valid-feedback">
                                             Looks good!
                                         </div>
