@@ -60,10 +60,10 @@ function ConfirmationPage() {
                 <div className="modal-dialog" role="document">
                     <div className="modal-content">
                         <div className="modal-header">
-                            <h5 className="modal-title"><b>Success!</b>✅</h5>
+                            <h5 className="modal-title"><b>Success! </b>✅</h5>
                         </div>
                             <div className="modal-body">
-                                <p>Your form has been submitted, further details will be shared to your mail and whether your appointment will be on the date by provided by you will be up to doctor's availability.</p>
+                                <p>Your form has been submitted, further details will be shared to your mail and whether your appointment will be on the date provided by you, will be up to doctor's availability.</p>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className="custom-btn-2 btn-sm btn-danger" onClick={goHome}>OK</button>
