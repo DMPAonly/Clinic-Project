@@ -92,8 +92,8 @@ function ProductList() {
                                 <h2 className={style.productTitle}>{hover == l.id ? l.name : truncateText(l.name)}</h2>
                                 <p className={style.productDescription}>{hover == l.id ? l.description : truncateText(l.description)}</p>
                                 <br></br>
-                                <p className={style.productPrice}>₹{l.price}</p>
-                                <button type="button" className="custom-btn-1 btn-sm btn-info mr-2" onClick={() => handleOrder(l)}>Place Order</button>
+                                <p className={style.productPrice}>₹{l.price} {l.quantity === 0 ? <span style={{color: "red"}}>Out of Stock</span> : null}</p>
+                                <button type="button" className="custom-btn-1 btn-sm btn-info mr-2" onClick={() => handleOrder(l)} disabled={l.quantity === 0}>Place Order</button>
                             </div>
                         </div>
                     </div>
