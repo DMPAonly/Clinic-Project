@@ -35,6 +35,10 @@ function Footer() {
             <div className={style.footerContent}>
                 <div className={style.copyright}>
                     © Family Care Electro Homeopathic Clinic
+                    <br></br>
+                    2 Fire Brigade Road,
+                    <br></br>
+                    Chittagonj, Lakshmipur
                 </div>
                 <div className={style.socialIcons} aria-label="Social Media Links">
                     {socials.map((social, i) => {

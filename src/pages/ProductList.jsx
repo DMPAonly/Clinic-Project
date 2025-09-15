@@ -47,6 +47,7 @@ function ProductList() {
         if(order.quantity <= orderedProduct.quantity) {
             const newQuantity = orderedProduct.quantity - order.quantity;
             const updateProduct = {...orderedProduct, quantity: newQuantity};
+            console.log(updateProduct);
             try{
                 const response = await axios.post("http://localhost:8080/orders/placeOrder", order);
                 const result = await axios.patch("http://localhost:8080/products/updateProduct", updateProduct);

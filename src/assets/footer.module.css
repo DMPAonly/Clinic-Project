@@ -1,6 +1,6 @@
 footer {
     background-color: #47ab14;
-    padding: 4rem 2rem;
+    padding: 2rem 2rem 4rem 2rem;
     overflow: hidden;
     position: relative;
     font-size: 1rem;
@@ -17,7 +17,7 @@ footer {
 
 .copyright {
     flex: 1 1 auto;
-    color: #bbb;
+    color: #fff;
 }
 
 .socialIcons {
