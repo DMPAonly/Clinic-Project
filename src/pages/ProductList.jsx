@@ -12,7 +12,7 @@ function ProductList() {
     const [hover, setHover] = useState();
     const [list, setList] = useState([]);
     const [showModal, setShowModal] = useState(false);
-    const [order, setOrder] = useState({customerName: "", email: "", productName: "", productId: "", quantity: 0, address: "", pincode: 0});
+    const [order, setOrder] = useState({customerName: "", email: "", productName: "", productId: "", quantity: 0, address: "", pincode: 0, amount: 0});
     const [orderedProduct, setOrderedProduct] = useState({id: "", name: "", img: "", price: "", quantity: "", description: ""});
     const [price, setPrice] = useState(0);
 
@@ -36,6 +36,9 @@ function ProductList() {
         if(name == "quantity"){
             const price = parseInt(orderedProduct.price);
             setPrice(value*price);
+            setOrder((pre) => {
+                return {...pre, amount: value*price};
+            });
         }
         setOrder((pre) => {
             return {...pre, [name]: value};
