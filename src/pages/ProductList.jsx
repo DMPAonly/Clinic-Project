@@ -53,10 +53,13 @@ function ProductList() {
             console.log(updateProduct);
             try{
                 const response = await axios.post("http://localhost:8080/orders/placeOrder", order);
-                const result = await axios.patch("http://localhost:8080/products/updateProduct", updateProduct);
                 console.log(response.data);
-                console.log(result.data);
-                alert("Order placed");
+                window.location.href = response.data;
+                //window.location.href(response.data);
+                //const result = await axios.patch("http://localhost:8080/products/updateProduct", updateProduct);
+                //console.log(response.data);
+                //console.log(result.data);
+                //alert("Order placed");
             } catch(error) {
                 alert("Error placing order");
                 console.error("Error placing order: ", error);
