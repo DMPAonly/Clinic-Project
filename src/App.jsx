@@ -12,6 +12,7 @@ import NotFound from './pages/NotFound.jsx';
 import PatientForm from './pages/PatientForm.jsx';
 import ConfirmationPage from './pages/ConfirmationPage.jsx';
 import AdminDashboard from './pages/AdminDashboard.jsx';
+import OrderStatus from './pages/OrderStatus.jsx';
 
 function App() {
   const location = useLocation();
@@ -19,7 +20,7 @@ function App() {
   return (
     <>
       <PreLoader />
-      {location.pathname === "/Patient_Form" || location.pathname === "/Confirmation_page" || location.pathname === "/AdminDashboard" ? null : <Header />}
+      {location.pathname === "/Patient_Form" || location.pathname === "/Confirmation_page" || location.pathname === "/AdminDashboard" || location.pathname === "/OrderStatus" ? null : <Header />}
       <Routes >
         <Route path="/" element={<Home />} />
         <Route path="/Diseases" element={<Diseases />} /> 
@@ -30,8 +31,9 @@ function App() {
         <Route path="/Patient_Form" element={<PatientForm />} />
         <Route path="/Confirmation_page" element={<ConfirmationPage />} />
         <Route path="/AdminDashboard" element={<AdminDashboard />} />
+        <Route path="/OrderStatus" element={<OrderStatus />} />
       </Routes>
-      {location.pathname === "/Patient_Form" || location.pathname === "/Confirmation_page" || location.pathname === "/AdminDashboard" ? null : <Footer />}
+      {location.pathname === "/Patient_Form" || location.pathname === "/Confirmation_page" || location.pathname === "/AdminDashboard" || location.pathname === "/OrderStatus" ? null : <Footer />}
     </>
   )
 }
