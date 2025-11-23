@@ -25,7 +25,7 @@ function ContactUs() {
             return;
         }
 		try{
-			const result = await axios.post("http://localhost:8080/contact/tryContact", data);
+			const result = await axios.post("https://clinic-project-backend-production.up.railway.app/contact/tryContact", data);
 			console.log(result);
 			setData({name: "", email: "", phone: "", subject: "", message: ""});
 			alert("You will be contacted through email or phone");

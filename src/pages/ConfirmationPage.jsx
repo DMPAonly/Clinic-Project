@@ -14,7 +14,7 @@ function ConfirmationPage() {
     const handleSubmit = () => {
         //$('#staticBackdrop').modal('show'); 
         try{
-            axios.post("http://localhost:8080/clinic/createPatient", formData)
+            axios.post("https://clinic-project-backend-production.up.railway.app/clinic/createPatient", formData)
             .then(response => {
                 console.log(response.data);
             });

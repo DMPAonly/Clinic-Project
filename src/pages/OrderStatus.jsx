@@ -16,7 +16,7 @@ function OrderStatus() {
 
     async function getStatus() {
         const id = searchParams.get("id");
-        const response = await axios.get(`http://localhost:8080/orders/getStatus/${id}`);
+        const response = await axios.get(`https://clinic-project-backend-production.up.railway.app/orders/getStatus/${id}`);
         console.log(response.data);
         setStatus(response.data);
         if(response.data === "PENDING") {

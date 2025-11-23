@@ -30,7 +30,7 @@ function ProductAdmin() {
     }, []);
 
     async function getProducts() {
-        const response = await axios.get("http://localhost:8080/products/getAll");
+        const response = await axios.get("https://clinic-project-backend-production.up.railway.app/products/getAll");
         const result = response.data
         setProducts(result);
         console.log(response.data);
@@ -88,7 +88,7 @@ function ProductAdmin() {
                 setNewProduct((pre) => {
                     return {...pre, id : editId};
                 });
-                const response = await axios.patch("http://localhost:8080/products/updateProduct", newProduct);
+                const response = await axios.patch("https://clinic-project-backend-production.up.railway.app/products/updateProduct", newProduct);
                 console.log(response);
             } catch(err){
                 console.error("Error updating data: ", err);
@@ -101,7 +101,7 @@ function ProductAdmin() {
         } else{
             try{
                 console.log(newProduct);
-                const response = await axios.post("http://localhost:8080/products/insertProduct", newProduct);
+                const response = await axios.post("https://clinic-project-backend-production.up.railway.app/products/insertProduct", newProduct);
                 console.log(response);
             } catch(err){
                 console.error("Error updating data: ", err);
@@ -123,7 +123,7 @@ function ProductAdmin() {
 
     async function handleDelete(id) {
         try{
-            const response = await axios.delete(`http://localhost:8080/products/deleteProduct/${id}`);
+            const response = await axios.delete(`https://clinic-project-backend-production.up.railway.app/products/deleteProduct/${id}`);
             console.log(response);
             getProducts();
         } catch(err) {

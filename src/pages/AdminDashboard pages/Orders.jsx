@@ -10,7 +10,7 @@ function Orders() {
     }, []);
 
     async function getOrders() {
-        const response = await axios.get("http://localhost:8080/orders/getOrders");
+        const response = await axios.get("https://clinic-project-backend-production.up.railway.app/orders/getOrders");
         setOrders(response.data);
     }
 

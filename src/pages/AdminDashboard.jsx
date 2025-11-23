@@ -33,7 +33,7 @@ function AdminDashboard() {
     }, []);
 
     async function getForms() {
-        const response = await axios.get("http://localhost:8080/clinic/getAllPatients");
+        const response = await axios.get("https://clinic-project-backend-production.up.railway.app/clinic/getAllPatients");
         setForms(response.data);
     }
 

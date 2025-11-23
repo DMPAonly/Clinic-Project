@@ -52,7 +52,7 @@ function ProductList() {
             const updateProduct = {...orderedProduct, quantity: newQuantity};
             console.log(updateProduct);
             try{
-                const response = await axios.post("http://localhost:8080/orders/placeOrder", order);
+                const response = await axios.post("https://clinic-project-backend-production.up.railway.app/orders/placeOrder", order);
                 console.log(response.data);
                 window.location.href = response.data;
                 //window.location.href(response.data);
@@ -83,7 +83,7 @@ function ProductList() {
     }
 
     async function getList() {
-        const response = await axios.get("http://localhost:8080/products/getAll");
+        const response = await axios.get("https://clinic-project-backend-production.up.railway.app/products/getAll");
         setList(response.data);
     }
 
